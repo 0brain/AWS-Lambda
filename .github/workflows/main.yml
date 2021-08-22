@@ -13,7 +13,6 @@ jobs:
       uses: montudor/action-zip@v1
       with:
           args: zip -qq -r code.zip .
-    - uses: actions/checkout@master
     - name: Deploy code to Lambda
       uses: appleboy/lambda-action@master
       with:
