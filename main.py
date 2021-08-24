@@ -15,7 +15,7 @@ def say_hello_handler(event, context):
         globalCursor = 0
     table = call_table()
     table = table[globalCursor:] + table[:globalCursor]
-    result = table[0] + "<br>" + table[1] + "<br>" + table[2]
+    result = f"{table[0]}\n{table[1]}\n{table[2]}"
     globalCursor += 1
     if globalCursor == len(table):
         globalCursor = 0
@@ -23,7 +23,5 @@ def say_hello_handler(event, context):
     return {
         "statusCode": 200,
         "body": result,
-        "headers": {
-        'Content-Type': 'text/html'
-        }}
+    }
 
